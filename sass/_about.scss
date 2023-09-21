@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#about.flex-container {
+    margin-bottom: 120px;
+
+    @include bs.mq {
+        margin-bottom: 80px;
+        flex-direction: column;
+    }
+
+    .flex-item {
+
+        &:first-child {
+            width: 55%;
+
+            @include bs.mq {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            img {
+                height: 400px;
+                object-fit: cover;
+
+                @include bs.mq {
+                    height: 300px;
+                }
+            }
+        }
+
+        &:last-child {
+            width: 45%;
+            padding: 180px 70px 0;
+
+            @include bs.mq {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .about-text {
+                line-height: 30px;
+            }
+        }
+    }
+}

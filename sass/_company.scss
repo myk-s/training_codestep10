@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#company {
+    margin-bottom: 185px;
+
+    @include bs.mq {
+        margin-bottom: 0;
+    }
+
+    .wrapper.flex-container {
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 0;
+
+        @include bs.mq {
+            flex-direction: column;
+            position: static;
+            padding: 0 16px;
+        }
+
+        .flex-item {
+            
+            &:first-child {
+                width: 57%;
+                background-color: bs.$company-bg-color;
+                padding: 100px 60px;
+
+                @include bs.mq {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 40px 20px;
+                }
+
+                .company-info.flex-container {
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+
+                    @include bs.mq {
+                        flex-direction: column;
+                    }
+
+                    dt {
+                        width: 20%;
+                        margin-bottom: 6px;
+
+                        @include bs.mq {
+                            width: 100%;
+                        }
+                    }
+
+                    dd {
+                        width: 80%;
+                        margin-bottom: 6px;
+
+                        @include bs.mq {
+                            width: 100%;
+                            margin-bottom: 15px;
+                            margin-left: 15px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .business-contents {
+                            li {
+                                margin-bottom: 6px;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &:last-child {
+                width: 50%;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+
+                @include bs.mq {
+                    width: 100%;
+                    position: static;
+                    top: 0;
+                    transform: none;
+                }
+
+                img {
+                    height: 400px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

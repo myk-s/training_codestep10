@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#main-visual {
+    img.main-visual {
+        height: calc(100vh - 80px);
+        object-fit: cover;
+        margin-bottom: 120px;
+
+        @include bs.mq {
+            margin-bottom: 80px;
+        }
+    }
+}

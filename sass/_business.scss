@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+@forward "config/base";
+@use "config/base" as bs;
+
+#business {
+    margin-bottom: 120px;
+
+    @include bs.mq {
+        margin-bottom: 80px;
+    }
+
+    .sec-title-border {
+        margin-bottom: 150px;
+
+        @include bs.mq {
+            margin-bottom: 30px;
+        }
+    }
+
+    ul.flex-container {
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @include bs.mq {
+            flex-direction: column;
+        }
+
+        li.flex-item {
+            width: 40%;
+
+            @include bs.mq {
+                width: 100%;
+            }
+
+            &:nth-child(1) {
+                margin-bottom: 45px;
+                order: 1;
+
+                @include bs.mq {
+                    margin-bottom: 30px;
+                }
+            }
+
+            &:nth-child(2) {
+                order: 3;
+
+                @include bs.mq {
+                    margin-bottom: 30px;
+                    order: 2;
+                }
+            }
+
+            &:nth-child(3) {
+                margin-bottom: 45px;
+                order: 2;
+                position: relative;
+                top: -80px;
+
+                @include bs.mq {
+                    margin-bottom: 30px;
+                    order: 3;
+                    position: static;
+                    top: 0;
+                }
+            }
+
+            &:last-child {
+                order: 4;
+                position: relative;
+                top: -80px;
+
+                @include bs.mq {
+                    position: static;
+                    top: 0;
+                }
+            }
+
+            .flex-container {
+                align-items: center;
+                margin-bottom: 8px;
+
+                .business-title-mark {
+                    width: 8px;
+                    border-bottom: 1px solid bs.$border-color;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
